@@ -19,30 +19,31 @@ const stats: Stat[] = [
 export const Hero = ({ heroImage }: HeroProps) => {
   return (
     <section
-      className="relative min-h-screen flex items-center justify-start bg-cover bg-center"
+      className="relative min-h-screen flex items-start justify-center  bg-cover bg-center flex-col px-24 pt-44"
       style={{ backgroundImage: `url(${heroImage})` }}
     >
       <div className="absolute inset-0 bg-black/20"></div>
-      <div className="relative z-10 max-w-4xl px-24 text-white">
+      <div className="relative z-10 max-w-4xl text-white ">
         <h1 className="text-3xl md:text-5xl font-bold mb-6 animate-fade-in text-left leading-[4rem]">
           Empowering Africa Through{" "}
           <span className="block">Climate Knowledge.</span>
         </h1>
-        <p className="text-xl mb-8 text-white/90 text-left">
+        <p className="text-lg mb-8 text-white/90 text-left">
           Real-time climate insights and interactive learning to spark
-          awareness, action and change across Africa.
+          awareness,
+          <span className="block">action and change across Africa.</span>
         </p>
-        <div className="flex flex-col md:flex-row gap-4 items-start">
+        <div className="flex flex-row gap-4 items-start">
           <Button
             size="lg"
-            className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4"
+            className="bg-[#3AAAD9] hover:bg-[#3AAAD9] text-white hover:text-black px-8 py-4"
           >
             Explore Now
           </Button>
           <Button
             size="lg"
             variant="outline"
-            className="border-white text-white hover:bg-white/10 px-8 py-4"
+            className="border-[#3AAAD9] text-[#3AAAD9] bg-transparent px-8 py-4"
           >
             See Live Data
           </Button>
@@ -50,8 +51,8 @@ export const Hero = ({ heroImage }: HeroProps) => {
       </div>
 
       {/* Climate Stats Cards */}
-      <div className="absolute bottom-8 left-6 right-6">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="pt-40">
+        <div className="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4">
           {stats.map((stat, index) => (
             <Card
               key={index}
