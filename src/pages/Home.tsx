@@ -23,6 +23,8 @@ import {
   Lightbulb,
   Heart,
 } from "lucide-react";
+import { learningModules } from "@/lib/data";
+import Hero from "@/components/home/Hero";
 
 const Home = () => {
   const [activeSection, setActiveSection] = useState("overview");
@@ -72,90 +74,10 @@ const Home = () => {
     },
   ];
 
-  const learningModules = [
-    {
-      title: "Energy & Emissions",
-      description:
-        "Understanding carbon footprints and renewable energy solutions",
-      image:
-        "https://images.unsplash.com/photo-1497436072909-f5e4be442838?w=300&h=200&fit=crop",
-      duration: "45 min",
-      level: "Beginner",
-    },
-    {
-      title: "Climate Science Basics",
-      description: "Core concepts of climate change and global warming",
-      image:
-        "https://images.unsplash.com/photo-1569163139394-de4e4f43e4e3?w=300&h=200&fit=crop",
-      duration: "60 min",
-      level: "Intermediate",
-    },
-    {
-      title: "Sustainable Agriculture",
-      description: "Climate-smart farming practices for Africa",
-      image:
-        "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=300&h=200&fit=crop",
-      duration: "30 min",
-      level: "Advanced",
-    },
-  ];
-
   return (
     <>
       {/* Hero Section */}
-      <section
-        className="relative min-h-screen flex items-center justify-center bg-cover bg-center"
-        style={{ backgroundImage: `url(${heroImage})` }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/70 to-transparent"></div>
-        <div className="relative z-10 max-w-4xl mx-auto px-6 text-center text-white">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in">
-            Empowering Africa Through Climate Knowledge.
-          </h1>
-          <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-3xl mx-auto animate-fade-in">
-            Real-time climate insights and interactive learning to spark
-            awareness, action and change across Africa.
-          </p>
-          <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
-            <Button
-              size="lg"
-              className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4"
-            >
-              Explore Now
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-white text-white hover:bg-white/10 px-8 py-4"
-            >
-              See Live Data
-            </Button>
-          </div>
-        </div>
-
-        {/* Climate Stats Cards */}
-        <div className="absolute bottom-8 left-6 right-6">
-          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4">
-            {[
-              { title: "Lybia Floods Kills Thousands", reads: "1.2k" },
-              { title: "Lybia Floods Kills Thousands", reads: "856" },
-              { title: "Lybia Floods Kills Thousands", reads: "2.1k" },
-            ].map((stat, index) => (
-              <Card
-                key={index}
-                className="bg-white/10 backdrop-blur-sm border-white/20 text-white"
-              >
-                <CardContent className="p-4">
-                  <h3 className="font-semibold mb-2">{stat.title}</h3>
-                  <p className="text-sm text-white/80">
-                    Read More → {stat.reads}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+      <Hero heroImage={heroImage} />
 
       {/* Live Data Section */}
       <section className="py-20 bg-white">

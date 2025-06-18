@@ -85,7 +85,7 @@ const Header = () => {
           <select className="bg-transparent border-none text-white">
             <option>Nigeria</option>
           </select>
-          <Button className="hidden md:flex bg-blue-500 hover:bg-blue-600 text-white">
+          <Button className="hidden md:flex bg-[#3AAAD9] hover:bg-transparent hover:border hover:border-black text-white hover:text-black transition-colors duration-300">
             Get Started
           </Button>
         </div>
