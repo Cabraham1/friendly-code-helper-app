@@ -1,4 +1,4 @@
-import { lazy, Suspense, ComponentType } from "react";
+import { lazy, ComponentType } from "react";
 import NotFound from "@/pages/NotFound";
 
 const Home = lazy(() => import("@/pages/Home"));
@@ -19,14 +19,3 @@ export const routes: RouteConfig[] = [
     element: NotFound,
   },
 ];
-
-// Helper function to handle lazy loading
-export const withSuspense = (
-  Component: ComponentType | React.LazyExoticComponent<ComponentType>
-) => {
-  return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <Component />
-    </Suspense>
-  );
-};

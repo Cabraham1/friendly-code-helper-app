@@ -1,11 +1,12 @@
-import React, { lazy } from "react";
+import React, { Suspense } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
-import { routes, withSuspense } from "./routes";
+import { routes } from "./routes";
+import { LoadingScreen } from "@/components/ui/loading";
 
 const queryClient = new QueryClient();
 
@@ -15,17 +16,19 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <Layout>
-          <Routes>
-            {routes.map((route) => (
-              <Route
-                key={route.path}
-                path={route.path}
-                element={withSuspense(route.element)}
-              />
-            ))}
-          </Routes>
-        </Layout>
+        <Suspense fallback={<LoadingScreen />}>
+          <Layout>
+            <Routes>
+              {routes.map((route) => (
+                <Route
+                  key={route.path}
+                  path={route.path}
+                  element={<route.element />}
+                />
+              ))}
+            </Routes>
+          </Layout>
+        </Suspense>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

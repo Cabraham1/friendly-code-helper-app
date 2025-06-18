@@ -8,6 +8,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import heroImage from "/images/hero.png";
 import {
   CloudRain,
   Thermometer,
@@ -102,7 +103,10 @@ const Home = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center bg-[url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1920&h=1080&fit=crop')] bg-cover bg-center">
+      <section
+        className="relative min-h-screen flex items-center justify-center bg-cover bg-center"
+        style={{ backgroundImage: `url(${heroImage})` }}
+      >
         <div className="absolute inset-0 bg-gradient-to-r from-blue-900/70 to-transparent"></div>
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center text-white">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in">
