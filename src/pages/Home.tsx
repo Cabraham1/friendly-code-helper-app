@@ -9,6 +9,8 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import heroImage from "/images/hero.png";
+import firstpage from "/images/firstpage.png";
+import second from "/images/second.png";
 import {
   CloudRain,
   Thermometer,
@@ -25,6 +27,8 @@ import {
 } from "lucide-react";
 import { learningModules } from "@/lib/data";
 import Hero from "@/components/home/Hero";
+import { FeatureCard } from "@/components/home/FeatureCard";
+import { LearnByPlaying } from "@/components/home/LearnByPlaying";
 
 const Home = () => {
   const [activeSection, setActiveSection] = useState("overview");
@@ -74,6 +78,24 @@ const Home = () => {
     },
   ];
 
+  const features = [
+    {
+      title: "Track Climate Changes Live",
+      description: "Instant Updates on temperature, rainfall, forest and more.",
+      buttonText: "View Live Data",
+    },
+    {
+      title: "Quick Country weather stats.",
+      description: "Analyse weather change and investigate trends in Africa.",
+      buttonText: "Explore Trend",
+    },
+    {
+      title: "Track Climate Changes Live",
+      description: "Instant Updates on temperature, rainfall, forest and more.",
+      buttonText: "View Live Data",
+    },
+  ];
+
   return (
     <>
       {/* Hero Section */}
@@ -81,6 +103,21 @@ const Home = () => {
 
       {/* Live Data Section */}
       <section className="py-20 bg-white">
+        <div className="flex md:flex-row flex-col items-center justify-center gap-10  max-w-7xl mx-auto px-6">
+          {features.map((feature, i) => (
+            <FeatureCard
+              key={i}
+              title={feature.title}
+              description={feature.description}
+              buttonText={feature.buttonText}
+            />
+          ))}
+        </div>
+      </section>
+      <section className="py-20 bg-white">
+        <LearnByPlaying firstpage={firstpage} second={second} />
+      </section>
+      <section className="py-20 bg-gradient-to-br from-blue-50 to-cyan-50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
