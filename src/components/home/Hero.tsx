@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { GoArrowUpRight } from "react-icons/go";
 
 interface Stat {
   title: string;
@@ -52,17 +53,18 @@ export const Hero = ({ heroImage }: HeroProps) => {
 
       {/* Climate Stats Cards */}
       <div className="pt-40">
-        <div className="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4">
           {stats.map((stat, index) => (
             <Card
               key={index}
-              className="bg-white/10 backdrop-blur-sm border-white/20 text-white"
+              className="bg-transparent border-0 border-t border-t-white text-white rounded-none"
             >
               <CardContent className="p-4">
-                <h3 className="font-semibold mb-2">{stat.title}</h3>
-                <p className="text-sm text-white/80">
-                  Read More → {stat.reads}
-                </p>
+                <h3 className="font-extrabold mb-2">{stat.title}</h3>
+                <div className="flex items-center gap-1 text-sm font-bold text-white/80">
+                  <span>Read More</span>
+                  <GoArrowUpRight />
+                </div>
               </CardContent>
             </Card>
           ))}
