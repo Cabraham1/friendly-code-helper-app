@@ -53,7 +53,7 @@ export const Hero = ({ heroImage }: HeroProps) => {
 
       {/* Climate Stats Cards */}
       <div className="pt-40">
-        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="max-w-4xl mx-auto grid grid-cols- md:grid-cols-3 gap-4">
           {stats.map((stat, index) => (
             <Card
               key={index}
@@ -61,7 +61,7 @@ export const Hero = ({ heroImage }: HeroProps) => {
             >
               <CardContent className="p-4">
                 <h3 className="font-extrabold mb-2">{stat.title}</h3>
-                <div className="flex items-center gap-1 text-sm font-bold text-white/80">
+                <div className="flex items-center gap text-sm font-bold text-white/80">
                   <span>Read More</span>
                   <GoArrowUpRight />
                 </div>
