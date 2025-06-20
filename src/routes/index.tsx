@@ -2,6 +2,7 @@ import { lazy, ComponentType } from "react";
 import NotFound from "@/pages/NotFound";
 
 const Home = lazy(() => import("@/pages/Home"));
+const Dummy = lazy(() => import("@/pages/Dummy"));
 
 interface RouteConfig {
   path: string;
@@ -13,6 +14,10 @@ export const routes: RouteConfig[] = [
   {
     path: "/",
     element: Home,
+  },
+  {
+    path: "/dummy",
+    element: Dummy,
   },
   {
     path: "*",
