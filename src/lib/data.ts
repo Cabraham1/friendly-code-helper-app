@@ -25,3 +25,21 @@ export const learningModules = [
     level: "Advanced",
   },
 ];
+
+export const features = [
+  {
+    title: "Track Climate Changes Live",
+    description: "Instant Updates on temperature, rainfall, forest and more.",
+    buttonText: "View Live Data",
+  },
+  {
+    title: "Quick Country weather stats.",
+    description: "Analyse weather change and investigate trends in Africa.",
+    buttonText: "Explore Trend",
+  },
+  {
+    title: "Track Climate Changes Live",
+    description: "Instant Updates on temperature, rainfall, forest and more.",
+    buttonText: "View Live Data",
+  },
+];

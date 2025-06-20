@@ -1,103 +1,15 @@
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import heroImage from "/images/hero.png";
 import firstpage from "/images/firstpage.png";
 import second from "/images/second.png";
 import communityImage from "/images/communityImage.png";
-import {
-  CloudRain,
-  Thermometer,
-  Wind,
-  Eye,
-  BookOpen,
-  Users,
-  TrendingUp,
-  Play,
-  ArrowRight,
-  Globe,
-  Lightbulb,
-  Heart,
-} from "lucide-react";
-import { learningModules } from "@/lib/data";
+import { features } from "@/lib/data";
 import Hero from "@/components/home/Hero";
 import { FeatureCard } from "@/components/home/FeatureCard";
 import { LearnByPlaying } from "@/components/home/LearnByPlaying";
 import { CommunityCTA } from "@/components/home/CommunityCTA";
 
 const Home = () => {
-  const [activeSection, setActiveSection] = useState("overview");
-
-  const weatherData = [
-    {
-      label: "Temperature",
-      value: "33°C",
-      icon: Thermometer,
-      trend: "+2°C",
-      location: "Partly cloudy",
-    },
-    {
-      label: "Air Quality",
-      value: "78",
-      icon: Wind,
-      trend: "Good",
-      location: "AQI Moderate",
-    },
-    {
-      label: "Wind Speed",
-      value: "12 km/h",
-      icon: Wind,
-      trend: "Low",
-      location: "Wind",
-    },
-    {
-      label: "UV Index",
-      value: "High",
-      icon: Eye,
-      trend: "8/10",
-      location: "UV Light protection recommended",
-    },
-    {
-      label: "Humidity",
-      value: "72%",
-      icon: CloudRain,
-      trend: "Normal",
-      location: "Humidity",
-    },
-    {
-      label: "Precipitation",
-      value: "10%",
-      icon: CloudRain,
-      trend: "Low",
-      location: "Precipitation",
-    },
-  ];
-
-  const features = [
-    {
-      title: "Track Climate Changes Live",
-      description: "Instant Updates on temperature, rainfall, forest and more.",
-      buttonText: "View Live Data",
-    },
-    {
-      title: "Quick Country weather stats.",
-      description: "Analyse weather change and investigate trends in Africa.",
-      buttonText: "Explore Trend",
-    },
-    {
-      title: "Track Climate Changes Live",
-      description: "Instant Updates on temperature, rainfall, forest and more.",
-      buttonText: "View Live Data",
-    },
-  ];
-
   return (
     <>
       {/* Hero Section */}
@@ -116,6 +28,8 @@ const Home = () => {
           ))}
         </div>
       </section>
+
+      {/* Learning Modules Section */}
       <section className="py-20 bg-white">
         <LearnByPlaying firstpage={firstpage} second={second} />
       </section>
