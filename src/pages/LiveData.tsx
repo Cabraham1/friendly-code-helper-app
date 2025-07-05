@@ -64,31 +64,33 @@ const LiveData = () => {
         <Hero heroImage="/images/liveData.png" />
       </section>
 
-      <section className="py-20 px-20 bg-white">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+      <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-12 lg:px-20 bg-white">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12">
           {weatherData.map((data, index) => (
             <Card
               key={index}
               className="hover:shadow-lg transition-shadow bg-[#E0F6FF] duration-300 hover-scale"
             >
-              <CardContent className="p-6">
-                <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-2xl font-bold text-[#3AAAD9] mb-1">
+              <CardContent className="p-4 sm:p-6">
+                <div className="flex items-center justify-between mb-3 sm:mb-4">
+                  <h3 className="text-xl sm:text-2xl font-bold text-[#3AAAD9] mb-1">
                     {data.value}
                   </h3>
-                  <data.icon className="h-8 w-8 text-blue-500" />
+                  <data.icon className="h-6 w-6 sm:h-8 sm:w-8 text-blue-500" />
                 </div>
-                <p className="text-sm font-bold text-gray-600 mb-2">
+                <p className="text-xs sm:text-sm font-bold text-gray-600 mb-2">
                   {data.location}
                 </p>
-                <p className="text-slate-500 mb-2">{data.description}</p>
+                <p className="text-xs sm:text-sm text-slate-500 mb-2">
+                  {data.description}
+                </p>
               </CardContent>
             </Card>
           ))}
         </div>
       </section>
 
-      <section className="py-20 px-20">
+      <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-12 lg:px-20">
         <WeatherMap />
       </section>
     </>

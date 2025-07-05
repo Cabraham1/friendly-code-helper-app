@@ -4,33 +4,33 @@ interface Props {
 
 export const CommunityCTA = ({ communityImage }: Props) => {
   return (
-    <section className="w-full py-16 px-6 md:px-20 bg-white relative">
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 items-center gap-10 relative">
+    <section className="w-full py-12 sm:py-16 px-4 sm:px-6 md:px-20 bg-white relative">
+      <div className="max-w-7xl mx-auto grid md:grid-cols-2 items-center gap-8 md:gap-10 relative">
         {/* Left Content */}
-        <div>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-snug">
+        <div className="order-2 md:order-1">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 leading-snug">
             Join a Growing Climate Action Community
           </h2>
-          <p className="text-gray-600 mt-4 text-lg max-w-md">
+          <p className="text-gray-600 mt-4 text-base sm:text-lg max-w-md">
             Connect with like minded individuals, join discussions, share local
             solutions, and participate in real-world challenges that make an
             impact.
           </p>
-          <button className="mt-6 border border-sky-500 text-sky-500 px-6 py-2 rounded-md hover:bg-sky-50 transition text-sm font-medium">
+          <button className="mt-6 border border-sky-500 text-sky-500 px-4 sm:px-6 py-2 rounded-md hover:bg-sky-50 transition text-sm font-medium w-full sm:w-auto">
             Join the movement
           </button>
         </div>
 
         {/* Right Image */}
-        <div className="relative flex justify-center">
+        <div className="relative flex justify-center order-1 md:order-2">
           <img
             src={communityImage}
             alt="Community group"
-            className="rounded-[2rem] w-full max-w-md h-auto shadow-md"
+            className="rounded-[2rem] w-full max-w-sm sm:max-w-md h-auto shadow-md"
           />
 
-          {/* Slanted Arrow */}
-          <div className="hidden md:block absolute left-[-120px] top-1/2 -translate-y-1/2">
+          {/* Slanted Arrow - hidden on mobile */}
+          <div className="hidden lg:block absolute left-[-120px] top-1/2 -translate-y-1/2">
             <svg
               width="180"
               height="120"

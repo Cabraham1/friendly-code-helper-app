@@ -13,7 +13,6 @@ const Header = () => {
     { to: "/about-us", label: "About Us" },
     { to: "/live-data", label: "Live Data" },
     { to: "/learn", label: "Learn" },
-    { to: "/dummy", label: "Dummy" },
   ];
 
   const isActiveLink = (path: string) => {
