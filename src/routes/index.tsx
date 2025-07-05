@@ -4,7 +4,7 @@ import NotFound from "@/pages/NotFound";
 const Home = lazy(() => import("@/pages/Home"));
 const AboutUs = lazy(() => import("@/pages/AboutUs"));
 const LiveData = lazy(() => import("@/pages/LiveData"));
-const Dummy = lazy(() => import("@/pages/Dummy"));
+const Learn = lazy(() => import("@/pages/Learn"));
 
 interface RouteConfig {
   path: string;
@@ -26,8 +26,8 @@ export const routes: RouteConfig[] = [
     element: LiveData,
   },
   {
-    path: "/dummy",
-    element: Dummy,
+    path: "/learn",
+    element: Learn,
   },
   {
     path: "*",
